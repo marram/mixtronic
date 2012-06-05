@@ -1,0 +1,3 @@
+[submodule "leftronic"]
+	path = leftronic
+	url = https://github.com/sonofabell/leftronic.git
