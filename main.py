@@ -15,6 +15,17 @@
 # limitations under the License.
 #
 import webapp2
+import settings
+from mixpanel import Mixpanel
+
+class Mixtronic(object):
+    @property
+    def mixpanel(self):
+        return Mixpanel(settings.MIXPANEL_API_KEY, settings.MIXPANEL_API_SECRET)
+
+    def segmentation(self, event, params):
+        return self.mixpanel.request(event, params)
+
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
