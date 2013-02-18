@@ -14,7 +14,7 @@ except ImportError:
 
 class Mixpanel(object):
 
-    ENDPOINT = 'http://mixpanel.com/api'
+    ENDPOINT = 'http://data.mixpanel.com/api'
     VERSION = '2.0'
 
     def __init__(self, api_key, api_secret):
@@ -37,7 +37,7 @@ class Mixpanel(object):
 
         request = urllib.urlopen(request_url)
         data = request.read()
-
+        print data
         return json.loads(data)
 
     def unicode_urlencode(self, params):
